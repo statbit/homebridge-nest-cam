@@ -32,7 +32,7 @@ class NestCamPlatform {
 
   didFinishLaunching() {
     let self = this;
-    self.nestAPI = new Nest(self.config.username, self.config.password);
+    self.nestAPI = new Nest(self.config.username, self.config.password, self.config.betaServers);
     self.nestAPI.on('cameras', (cameras) => {
       let configuredAccessories = [];
       cameras.forEach((camera) => {
